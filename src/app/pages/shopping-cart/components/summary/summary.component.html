@@ -1,0 +1,50 @@
+<div class="mt-3 card-shadow border border-primary rounded-3 shadow-sm border-2">
+    <div *ngIf="this.loadingSpinner" class="spinner-container d-flex justify-content-center mt-4 mb-4">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only"></span>
+        </div>
+    </div>
+
+    <div class="card-body" *ngFor="let product of this.cartProducts">
+        <h4 class="card-title mt-3"><u>RE</u>SUMEN DE COMPRA</h4>
+
+        <a class="d-flex justify-content-end mx-4" routerLink="/shopping-cart"><u>MODIFICAR</u></a>
+
+        <div *ngIf="!this.loadingSpinner" class="bg-info">
+            <hr style="border: 1px solid rgb(14, 118, 168);">
+            <div class="row">
+                <div class="col-sm-2">
+                    <img src="{{product.img_url}}" class="card-img-top img-fluid mt-2 mb-2"
+                        style="max-width: 100%; height: auto;" alt="...">
+                </div>
+                <div class="col-sm-4">
+                    <p class="mx-3">{{product.name}}</p>
+                </div>
+                <div class="col-sm-3">
+                    <p class="mx-3"><b>Cnt:</b> 1</p>
+                </div>
+                <div class="col-sm-3">
+                    <p class="mx-3">{{product.price}} €</p>
+                </div>
+            </div>
+            <hr style="border: 1px solid rgb(14, 118, 168);">
+            <div class="row">
+                <div class="col-sm-2 offset-sm-2">
+                    <p class="mx-3">ENVÍO</p>
+                </div>
+                <div class="col-sm-2 offset-sm-5">
+                    <p class="mx-3">GRATIS</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4 row">
+            <div class="col-sm-2 offset-sm-2">
+                <h5 class="mx-3"><b>TOTAL</b></h5>
+            </div>
+            <div class="col-sm-2 offset-sm-5">
+                <h5 class="mx-3"><b>{{this.totalPrice}}€</b></h5>
+            </div>
+        </div>
+    </div>
+</div>

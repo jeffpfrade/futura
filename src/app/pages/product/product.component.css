@@ -1,0 +1,47 @@
+.spinner-container{
+  margin-top: 20%;
+  margin-bottom: 20%;
+}
+
+u {
+  text-decoration-color: rgb(14, 118, 168);
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+hr{
+border: 1px solid rgb(10, 83, 117);
+}
+
+.fino{
+font-weight: 300;
+}
+
+/* ESTRELLAS DE VALORACION */
+p.clasificacion {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+p.clasificacion input {
+  position: absolute;
+  top: -100px;
+}
+
+p.clasificacion span {
+  float: right;
+  color: rgb(14, 118, 168);
+}
+
+/* ------------------------------------- */
+
+.producto:hover{
+background-color: rgb(191, 219, 231);
+-webkit-transform: scale(1.5);
+transition: all .2s ease-in-out;
+transform: scale(1.1)
+}

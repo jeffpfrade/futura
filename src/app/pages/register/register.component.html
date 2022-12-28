@@ -1,0 +1,108 @@
+<div class="container">
+  <div class="row">
+      <div class="col-sm-12">
+          <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a class="text-decoration-none text-dark" href="#" routerLink="/">Inicio</a></li>
+              <li class="breadcrumb-item"><a class="text-decoration-none text-dark" href="#" routerLink="/mi-cuenta">Mi cuenta</a></li>
+              <li class="breadcrumb-item active text-dark fw-bold" aria-current="page">Crear cuenta</li>
+            </ol>
+          </nav>
+        </div>
+  </div>
+  <div class="row">
+      <div class="col-sm-12">
+          <div class="card shadow-sm">
+              <div class="card-body">
+                  <h3 class="card-title text-center"><u>REGÍ</u>STRATE EN FUTURA</h3>
+                  <p class="card-text text-center" id="bold">Rellena este formulario para crear una cuenta en FUTURA.</p>
+                  <p class="card-text">Los campos marcados con <span class="text-danger fw-bold">*</span> son obligatorios.</p>
+                  <form [formGroup]="form" (ngSubmit)="register()">
+                      <div>
+                          <div class="row">
+                              <div class="col-sm-12 mb-3">
+                                  <hr class="text-primary"/>
+                                  <h5 class="text-center">DATOS PERSONALES</h5>
+                                  <hr class="text-primary"/>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-sm-5 offset-sm-1 mb-4">
+                                <label for="firstName" class="form-label">NOMBRE <span class="text-danger fw-bold">*</span></label>
+                                <input formControlName="firstName" type="text" class="form-control" id="firstName" placeholder="Nombre" name="firstName" required>
+                            </div>
+                              <div class="col-sm-5 mb-5">
+                                  <label for="lastName2" class="form-label">APELLIDOS</label>
+                                  <input formControlName="secondName" type="text" class="form-control" id="lastName2" placeholder="Segundo apellido" name="lastName2">
+                              </div>
+                          </div>
+                      </div>
+                      <div>
+                          <div class="row">
+                              <div class="col-sm-12 mb-3">
+                                  <hr class="text-primary"/>
+                                  <h5 class="text-center">DATOS DE ACCESO</h5>
+                                  <hr class="text-primary"/>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-sm-5 offset-sm-1 mb-4">
+
+                                  <label for="email" class="form-label">CORREO ELECTRÓNICO <span class="text-danger fw-bold">*</span></label>
+                                  <input formControlName="email" type="email" class="form-control" id="email" placeholder="Dirección de email" name="email" required>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-sm-5 offset-sm-1 mb-4">
+                                  <label for="password" class="form-label">CONTRASEÑA <span class="text-danger fw-bold">*</span></label>
+                                  <div class="input-group">
+                                      <input formControlName="password" [type]="fieldPasswordType ? 'text' : 'password'" class="form-control" id="password" placeholder="Contraseña" name="password" required>
+                                      <div class="input-group-append">
+                                          <span class="input-group-text">
+                                            <i [ngClass]="{
+                                              'bi bi-eye-fill': !fieldPasswordType,
+                                              'bi bi-eye-slash-fill': fieldPasswordType
+                                            }"
+                                            (click)="toggleFieldPasswordType()" id="show_eye"></i>
+                                          </span>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-sm-5 mb-5">
+                                  <label for="password_confirmation" class="form-label">CONFIRMA TU CONTRASEÑA <span class="text-danger fw-bold">*</span></label>
+                                  <div class="input-group">
+                                      <input formControlName="password_confirmation" [type]="fieldConfirmPasswordType ? 'text' : 'password'" class="form-control" id="password_confirmation" placeholder="Confirma tu contraseña" name="password_confirmation" required>
+                                      <div class="input-group-append">
+                                          <span class="input-group-text">
+                                            <i [ngClass]="{
+                                              'bi bi-eye-fill': !fieldConfirmPasswordType,
+                                              'bi bi-eye-slash-fill': fieldConfirmPasswordType
+                                            }"
+                                            (click)="toggleFieldConfirmPasswordType()" id="show_eye"></i>
+                                          </span>
+                                        </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row mb-4 form-check">
+                          <div class="col-sm-10 offset-sm-1">
+                              <input formControlName="conditions" type="checkbox" class="form-check-input" id="conditions" required>
+                              <label class="form-check-label" for="conditions">He leído y acepto las Condiciones de uso y la Política de privacidad de FUTURA. <span class="text-danger fw-bold">*</span></label>
+                          </div>          
+                      </div>
+                      <div class="d-grid gap-2 col-sm-4 mx-auto">
+                          <button [disabled]="form.invalid" type="submit" class="btn btn-primary shadow" [disabled]="loadingSpinner">
+                            <span *ngIf="loadingSpinner" class="spinner-border spinner-border-sm mr-1"></span>
+                            CREAR CUENTA</button>
+                      </div>
+                      <div *ngIf="emailError" class="alert alert-danger mt-3 mb-0">El email ya existe</div>
+                      <div *ngIf="passwordError" class="alert alert-danger mt-3 mb-0">Las contraseñas no coinciden</div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+

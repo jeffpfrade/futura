@@ -1,0 +1,500 @@
+<div *ngIf="this.loadingSpinner" class="spinner-container d-flex justify-content-center">
+  <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+  </div>
+</div>
+
+<div *ngIf="!this.loadingSpinner">
+  <div class="container">
+    <div class="mt-3 row">
+        <div class="col-sm-12">
+            <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+                aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a class="text-decoration-none text-dark" href="#" routerLink="/">Inicio</a></li>
+                    <li class="breadcrumb-item"><a class="text-decoration-none text-dark" href="#" routerLink="../../moviles">Móviles</a></li>
+                    <li class="breadcrumb-item active text-dark fw-bold" aria-current="page">Producto</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <div class="mt-2 row">
+        <div class="col-sm-6" >
+            <!-- FOTOS PRODUCTO -->
+            <div class="">
+                <img class="img-fluid" src="{{this.currentProduct.img_url}}" alt="foto">
+            </div>
+        </div>
+        <div class="col-sm-5 offset-sm-1 border border-primary rounded-3 shadow-sm border-2">
+            <div class="row">
+                <div class="p-2 col-sm-7">
+                    <!-- Primer elemento del array {{mobiles}} -->
+                    <h4 class="card-title mt-3 mx-2"><b>{{this.currentProduct.name}}</b></h4>
+                </div>
+            </div>
+            <p>{{this.currentProduct.description}}</p>
+            
+            <div class="row">
+                <div class="col-sm-4">
+                    <!-- <p class="clasificacion" style="font-size: xx-large;">   
+                        <span *ngIf="mobiles.mark > 0">★</span>
+                        <span *ngIf="mobiles.mark > 1">★</span>
+                        <span *ngIf="mobiles.mark > 2">★</span>
+                        <span *ngIf="mobiles.mark > 3">★</span>
+                        <span *ngIf="mobiles.mark > 4">★</span>
+                    </p>  -->
+                </div>
+                <div class="mt-3 col-sm-3"> 
+                    <a href=""><u>2 Opiniones</u></a>
+                </div>
+            </div>
+            <p><i class="bi bi-circle-fill" style="color: green;"></i><b> Entrega a domicilio gratis</b></p>
+            <p class="mx-3">Disponible en 2-4 días hábiles</p> 
+  
+            <div class="d-flex justify-content-start">
+                <div>
+                    <p class="p-2"><b>Cantidad</b></p>
+                </div>
+                <div class="col-sm-2 col-xs-2">
+                    <input class="form-control border border-primary rounded-3 border-2" min="1" max="1" type="number" name="name" placeholder="" id="amount">
+                </div>
+            </div>
+            
+            <div class="text-end">
+                <h1><b>{{this.currentProduct.price}} €</b></h1>
+                <p style="font-weight: 300;">IVA incluido</p>
+            </div>
+                      
+            <div class="mb-2 row">
+                <div *ngIf="!this.alreadyAdded" class="col-sm-8 offset-sm-2">
+                    <div class="d-grid gap-2">
+                        <button (click)="addProductToCart()" type="button" class="btn btn-primary btn-lg btn-block shadow-sm">AÑADIR AL CARRITO<i class="bi bi-chevron-compact-right"></i></button>
+                    </div>
+                </div>
+                <div *ngIf="this.alreadyAdded" class="col-sm-8 offset-sm-2">
+                    <div class="d-grid gap-2">
+                        <button type="button" class="btn btn-info btn-lg btn-block shadow-sm disabled">YA EN TU CARRITO <i class="bi bi-cart-check"></i><i class="text-success bi bi-check-lg"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <div class="mt-5">
+        <h3 class="card-title"><u>CAR</u>ACTERÍSTICAS <b>TÉCNICAS</b></h3>
+        <div class="p-2">
+            <h4 class="card-title">TECNOLOGÍA</h4>
+            <!-- estilo de hr en css para hacerlo generico -->
+            <hr>
+            <div class="mx-2">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p><b>Sistema Operativo:</b></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <!-- <p class="fino">{{mobiles.OS}}</p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-2">
+            <h4 class="card-title">PROCESADOR</h4>
+            <!-- estilo de hr en css para hacerlo generico -->
+            <hr>
+            <div class="mx-2">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p><b>Características del procesador:</b></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <!-- <p class="fino">{{mobiles.cpu}}</p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-2">
+            <h4 class="card-title">PANTALLA</h4>
+            <!-- estilo de hr en css para hacerlo generico -->
+            <hr>
+            <div class="mx-2">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p><b>Tamaño:</b></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <!-- <p class="fino">{{mobiles.screenSize}}</p> -->
+                    </div>
+                </div>
+            </div>
+            <div class="mx-2">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p><b>Tipo de resolución de pantalla:</b></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="fino">Full HD+</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-2">
+            <h4 class="card-title">CÁMARA</h4>
+            <!-- estilo de hr en css para hacerlo generico -->
+            <hr>
+            <div class="mx-2">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p><b>Características cámara:</b></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <!-- <p class="fino">{{mobiles.camera}}</p> -->
+                    </div>
+                </div>
+            </div>
+            <div class="mx-2">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p><b>Enfoque automático:</b></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="fino">Sí</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mx-2">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p><b>Cámara frontal:</b></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="fino">Single Cam</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mx-2">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p><b>Flash integrado:</b></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="fino">Sí</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mx-2">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p><b>Reconocimiento facial:</b></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="fino">Sí</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-2">
+            <h4 class="card-title">MEMORIA</h4>
+            <!-- estilo de hr en css para hacerlo generico -->
+            <hr>
+            <div class="mx-2">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p><b>Memoria interna:</b></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <!-- <p class="fino">{{mobiles.storage}} GB</p> -->
+                    </div>
+                </div>
+            </div>
+            <div class="mx-2">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p><b>Memoria RAM:</b></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <!-- <p class="fino">{{mobiles.ram}} GB</p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-2">
+            <h4 class="card-title">CONECTIVIDAD</h4>
+            <!-- estilo de hr en css para hacerlo generico -->
+            <hr>
+            <div class="mx-2">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p><b>Red:</b></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="fino">4G/5G</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mx-2">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p><b>NFC:</b></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="fino">Sí</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mx-2">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p><b>Wi-Fi:</b></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="fino">Sí</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mx-2">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p><b>Versión Bluetooth:</b></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="fino">Bluetooth 5.0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-2">
+            <h4 class="card-title">BATERÍA</h4>
+            <!-- estilo de hr en css para hacerlo generico -->
+            <hr>
+            <div class="mx-2">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p><b>Tipo de batería:</b></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="fino">Ion de litio</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mx-2">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p><b>Recarga rápida:</b></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="fino">Sí</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mx-2">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p><b>Capacidad batería:</b></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <!-- <p class="fino">{{mobiles.battery}} mAh</p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-2">
+            <h4 class="card-title">DIMENSIONES Y PESOS</h4>
+            <!-- estilo de hr en css para hacerlo generico -->
+            <hr>
+            <div class="mx-2">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p><b>Dimensiones:</b></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="fino">75,6 x 161,5 x 7,8 mm</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mx-2">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p><b>Peso:</b></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="fino">202 g</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-2">
+            <h4 class="card-title">GARANTÍA</h4>
+            <!-- estilo de hr en css para hacerlo generico -->
+            <hr>
+            <div class="mx-2">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p><b>Garantía:</b></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="fino">2 años</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  <!-- PRODUCTOS RELACIONADOS -->
+  <div class="bg-info p-5">
+    <div class="container">
+        <div class="">
+            <h3 class="card-title"><u>PRO</u>DUCTOS <b>RELACIONADOS</b></h3>
+            <!-- SLIDER -->
+            <div class="row">
+                <div class="btn col-sm-3 border border-primary rounded-3 shadow-sm border-2 producto">
+                    <!-- RELLENAR CON DATOS DE LA BASE DE DATOS -->
+                    <img src="../../../../../assets/images/xiaomiRedmi9C.png" class="img-fluid" alt="">
+                    <p><b>Xiaomi Redmi 9C</b></p>
+                    <p>Gris, 64 GB, 3 GB, 6.53" HD+</p>
+                    <p>MediaTek Helio G35, 5000mAh, Android</p>
+                    <h3><b>183.20</b></h3>
+                    <p class="clasificacion" style="font-size: xx-large;">
+                     <input id="radio1" type="radio" name="estrellas" value="5">
+                     <label for="radio1">★</label>
+                     <input id="radio2" type="radio" name="estrellas" value="4">
+                     <label for="radio2">★</label>
+                     <input id="radio3" type="radio" name="estrellas" value="3">
+                     <label for="radio3">★</label>
+                     <input id="radio4" type="radio" name="estrellas" value="2">
+                     <label for="radio4">★</label>
+                     <input id="radio5" type="radio" name="estrellas" value="1">
+                     <label for="radio5">★</label>
+                   </p>
+             </div>
+             
+             <div class="btn col-sm-3 offset-sm-1 border border-primary rounded-3 shadow-sm border-2 producto">
+                 <!-- RELLENAR CON DATOS DE LA BASE DE DATOS -->
+                  <img src="../../../../../assets/images/xiaomiRedmi9C.png" class="img-fluid" alt="">
+                 <p><b>Xiaomi Redmi 9C</b></p>
+                 <p>Gris, 64 GB, 3 GB, 6.53" HD+</p>
+                 <p>MediaTek Helio G35, 5000mAh, Android</p>
+                 <h3><b>183.20</b></h3>
+                 <p class="clasificacion" style="font-size: xx-large;">
+                  <input id="radio1" type="radio" name="estrellas" value="5">
+                  <label for="radio1">★</label>
+                  <input id="radio2" type="radio" name="estrellas" value="4">
+                  <label for="radio2">★</label>
+                  <input id="radio3" type="radio" name="estrellas" value="3">
+                  <label for="radio3">★</label>
+                  <input id="radio4" type="radio" name="estrellas" value="2">
+                  <label for="radio4">★</label>
+                  <input id="radio5" type="radio" name="estrellas" value="1">
+                  <label for="radio5">★</label>
+                </p>
+             </div>
+  
+             <div class="btn col-sm-3 offset-sm-1 border border-primary rounded-3 shadow-sm border-2 producto">
+                <!-- RELLENAR CON DATOS DE LA BASE DE DATOS -->
+                 <img src="../../../../../assets/images/xiaomiRedmi9C.png" class="img-fluid" alt="">
+                <p><b>Xiaomi Redmi 9C</b></p>
+                <p>Gris, 64 GB, 3 GB, 6.53" HD+</p>
+                <p>MediaTek Helio G35, 5000mAh, Android</p>
+                <h3><b>183.20</b></h3>
+                <p class="clasificacion" style="font-size: xx-large;">
+                 <input id="radio1" type="radio" name="estrellas" value="5">
+                 <label for="radio1">★</label>
+                 <input id="radio2" type="radio" name="estrellas" value="4">
+                 <label for="radio2">★</label>
+                 <input id="radio3" type="radio" name="estrellas" value="3">
+                 <label for="radio3">★</label>
+                 <input id="radio4" type="radio" name="estrellas" value="2">
+                 <label for="radio4">★</label>
+                 <input id="radio5" type="radio" name="estrellas" value="1">
+                 <label for="radio5">★</label>
+               </p>
+            </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  <div class="container">
+    <h3 class="mt-4 card-title"><u>OPI</u>NIONES DE LOS <b>CLIENTES</b></h3>
+    <div class="p-2 mt-5">
+        <div class="row">
+            <div class="col-sm-10">
+                <button type="button" class="mb-2 btn btn-primary btn-lg btn-block shadow-sm">ESCRIBIR UNA OPINIÓN<i class="bi bi-chevron-compact-right"></i></button>
+            </div>
+            <div class="col-sm-2">
+                <select class="form-select border border-primary rounded-3 shadow-sm border-2" aria-label="Default select example">
+                    <option selected>Ordenar por:</option>
+                    <option value="1">Popularidad</option>
+                    <option value="2">Fecha</option>
+                </select>
+            </div>
+        </div>
+        <p>2 Opiniones</p>
+        <div class="mt-1 border border-primary rounded-3 shadow-sm border-2">
+            <div class="p-2 row">
+                <div class="mt-2 mx-2 col-sm-3">
+                    <h4><b>MARÍA HERNÁDEZ</b></h4>
+                </div>
+                <div class="col-sm-2 offset-sm-6">
+                    <p class="clasificacion" style="font-size: x-large;">
+                        <input id="radio1" type="radio" name="estrellas" value="5">
+                        <label for="radio1">★</label>
+                        <input id="radio2" type="radio" name="estrellas" value="4">
+                        <label for="radio2">★</label>
+                        <input id="radio3" type="radio" name="estrellas" value="3">
+                        <label for="radio3">★</label>
+                        <input id="radio4" type="radio" name="estrellas" value="2">
+                        <label for="radio4">★</label>
+                        <input id="radio5" type="radio" name="estrellas" value="1">
+                        <label for="radio5">★</label>
+                      </p>
+                </div>
+            </div>
+            <div class="p-4">
+                <p>Impresionante móvil</p>
+                <div class="p-2">
+                    <p>Muy contenta con el teléfono, gran rendimiento a un buen precio.</p>
+                    <div class="p-2 d-flex justify-content-start">
+                        <i class="bi bi-plus-circle-fill" style="color: green; font-size: 30px;"></i><p class="p-2"><b>Pros:</b> Larga duración de la batería y gran cámara.</p>
+                    </div>
+                    <div class="p-2 d-flex justify-content-start">
+                        <i class="bi bi-x-circle-fill" style="color: red; font-size: 30px;"></i><p class="p-2"><b>Pros:</b> Larga duración de la batería y gran cámara.</p>
+                    </div>
+                </div>
+            </div>            
+        </div>
+        <div class="mt-2 border border-primary rounded-3 shadow-sm border-2">
+            <div class="p-2 row">
+                <div class="mt-2 mx-2 col-sm-3">
+                    <h4><b>MARÍA HERNÁDEZ</b></h4>
+                </div>
+                <div class="col-sm-2 offset-sm-6">
+                    <p class="clasificacion" style="font-size: x-large;">
+                        <input id="radio1" type="radio" name="estrellas" value="5">
+                        <label for="radio1">★</label>
+                        <input id="radio2" type="radio" name="estrellas" value="4">
+                        <label for="radio2">★</label>
+                        <input id="radio3" type="radio" name="estrellas" value="3">
+                        <label for="radio3">★</label>
+                        <input id="radio4" type="radio" name="estrellas" value="2">
+                        <label for="radio4">★</label>
+                        <input id="radio5" type="radio" name="estrellas" value="1">
+                        <label for="radio5">★</label>
+                      </p>
+                </div>
+            </div>
+            <div class="p-4">
+                <p>Impresionante móvil</p>
+                <div class="p-2">
+                    <p>Muy contenta con el teléfono, gran rendimiento a un buen precio.</p>
+                    <div class="p-2 d-flex justify-content-start">
+                        <i class="bi bi-plus-circle-fill" style="color: green; font-size: 30px;"></i><p class="p-2"><b>Pros:</b> Larga duración de la batería y gran cámara.</p>
+                    </div>
+                    <div class="p-2 d-flex justify-content-start">
+                        <i class="bi bi-x-circle-fill" style="color: red; font-size: 30px;"></i><p class="p-2"><b>Pros:</b> Larga duración de la batería y gran cámara.</p>
+                    </div>
+                </div>
+            </div>                      
+        </div>
+    </div>
+  </div>
+</div>

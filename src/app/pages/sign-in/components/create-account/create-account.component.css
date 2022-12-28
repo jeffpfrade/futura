@@ -1,0 +1,29 @@
+u {
+  text-decoration-color: rgb(14, 118, 168);
+}
+h4 {
+  margin-bottom: 0.7em;
+}
+
+.card {
+  border-color: rgb(14, 118, 168);
+  border-width: 2px;
+  border-radius: 10px;
+  padding: 1em;
+}
+
+.card-text {
+  font-weight: 500;
+}
+
+#register {
+  background-color: #0e77a844;
+}
+
+#register {
+  background-color: #0e77a844;
+}
+
+#crear_cuenta {
+  margin-top: 2em;
+}

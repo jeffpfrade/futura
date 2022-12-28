@@ -1,0 +1,292 @@
+<div *ngIf="this.loadingSpinner" class="spinner-container d-flex justify-content-center">
+  <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+    <span class="sr-only"></span>
+  </div>
+</div>
+
+<div *ngIf="!this.loadingSpinner">
+  <div class="container">
+    <h4 class="mb-4 card-title mt-5 mx-2"><u>PRO</u>DUCTOS QUE SEGURO <b>TE INTERESAN</b></h4>
+  </div>
+    
+    <!-- SECCION TELEFONIA -->
+    <div class="container">
+      <h4 class="mx-3"><b>TELEFONÍA</b></h4>
+    </div>
+    <div id="carouselTelefonia" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselTelefonia" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselTelefonia" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselTelefonia" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="p-5 carousel-inner container">
+        <div class="carousel-item active">
+          <div class="row">
+            <div routerLink="/product/{{product.id}}" class="col-sm-2 m-3 btn card border border-footer rounded-3 shadow-sm border-1 producto" *ngFor="let product of this.productsDatabase">
+              <img src="{{product.img_url}}" class="card-img-top img-fluid" alt="...">
+              <div class="card-body">
+                <p>{{product.name}}</p>
+                <a><b>{{product.price}} €</b></a>                      
+              </div>
+            </div>
+            <!-- <div class="col-sm-2 m-3 btn card border border-footer rounded-3 shadow-sm border-1 producto ">
+              <img src="../../../assets/images/galaxyS20.png" class="card-img-top img-fluid" alt="...">
+              <div class="card-body">
+                <p>Samsung Galaxy S20</p>
+                <a><b>650 €</b></a>                      
+              </div>
+            </div>
+            <div class="col-sm-2 m-3 btn card border border-footer rounded-3 shadow-sm border-1 producto ">
+              <img src="../../../assets/images/galaxyS20.png" class="card-img-top img-fluid" alt="...">
+              <div class="card-body">
+                <p>Samsung Galaxy S20</p>
+                <a><b>650 €</b></a>                      
+              </div>
+            </div>
+            <div class="col-sm-2 m-3 btn card border border-footer rounded-3 shadow-sm border-1 producto ">
+              <img src="../../../assets/images/galaxyS20.png" class="card-img-top img-fluid" alt="...">
+              <div class="card-body">
+                <p>Samsung Galaxy S20</p>
+                <a><b>650 €</b></a>                      
+              </div>
+            </div>
+            <div class="col-sm-2 m-3 btn card border border-footer rounded-3 shadow-sm border-1 producto ">
+              <img src="../../../assets/images/galaxyS20.png" class="card-img-top img-fluid" alt="...">
+              <div class="card-body">
+                <p>Samsung Galaxy S20</p>
+                <a><b>650 €</b></a>                      
+              </div>
+            </div> -->
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row">
+            <div class="col-sm-2 m-3 btn card border border-footer rounded-3 shadow-sm border-1 producto ">
+              <img src="../../../assets/images/galaxyS20.png" class="card-img-top img-fluid" alt="...">
+              <div class="card-body">
+                <p>Samsung Galaxy S20</p>
+                <a><b>650 €</b></a>                      
+              </div>
+            </div>
+            <div class="col-sm-2 m-3 btn card border border-footer rounded-3 shadow-sm border-1 producto ">
+              <img src="../../../assets/images/galaxyS20.png" class="card-img-top img-fluid" alt="...">
+              <div class="card-body">
+                <p>Samsung Galaxy S20</p>
+                <a><b>650 €</b></a>                      
+              </div>
+            </div>
+            <div class="col-sm-2 m-3 btn card border border-footer rounded-3 shadow-sm border-1 producto ">
+              <img src="../../../assets/images/galaxyS20.png" class="card-img-top img-fluid" alt="...">
+              <div class="card-body">
+                <p>Samsung Galaxy S20</p>
+                <a><b>650 €</b></a>                      
+              </div>
+            </div>
+            <div class="col-sm-2 m-3 btn card border border-footer rounded-3 shadow-sm border-1 producto ">
+              <img src="../../../assets/images/galaxyS20.png" class="card-img-top img-fluid" alt="...">
+              <div class="card-body">
+                <p>Samsung Galaxy S20</p>
+                <a><b>650 €</b></a>                      
+              </div>
+            </div>
+            <div class="col-sm-2 m-3 btn card border border-footer rounded-3 shadow-sm border-1 producto ">
+              <img src="../../../assets/images/galaxyS20.png" class="card-img-top img-fluid" alt="...">
+              <div class="card-body">
+                <p>Samsung Galaxy S20</p>
+                <a><b>650 €</b></a>                      
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row">
+            <div class="col-sm-2 m-3 btn card border border-footer rounded-3 shadow-sm border-1 producto ">
+              <img src="../../../assets/images/galaxyS20.png" class="card-img-top img-fluid" alt="...">
+              <div class="card-body">
+                <p>Samsung Galaxy S20</p>
+                <a><b>650 €</b></a>                      
+              </div>
+            </div>
+            <div class="col-sm-2 m-3 btn card border border-footer rounded-3 shadow-sm border-1 producto ">
+              <img src="../../../assets/images/galaxyS20.png" class="card-img-top img-fluid" alt="...">
+              <div class="card-body">
+                <p>Samsung Galaxy S20</p>
+                <a><b>650 €</b></a>                      
+              </div>
+            </div>
+            <div class="col-sm-2 m-3 btn card border border-footer rounded-3 shadow-sm border-1 producto ">
+              <img src="../../../assets/images/galaxyS20.png" class="card-img-top img-fluid" alt="...">
+              <div class="card-body">
+                <p>Samsung Galaxy S20</p>
+                <a><b>650 €</b></a>                      
+              </div>
+            </div>
+            <div class="col-sm-2 m-3 btn card border border-footer rounded-3 shadow-sm border-1 producto ">
+              <img src="../../../assets/images/galaxyS20.png" class="card-img-top img-fluid" alt="...">
+              <div class="card-body">
+                <p>Samsung Galaxy S20</p>
+                <a><b>650 €</b></a>                      
+              </div>
+            </div>
+            <div class="col-sm-2 m-3 btn card border border-footer rounded-3 shadow-sm border-1 producto ">
+              <img src="../../../assets/images/galaxyS20.png" class="card-img-top img-fluid" alt="...">
+              <div class="card-body">
+                <p>Samsung Galaxy S20</p>
+                <a><b>650 €</b></a>                      
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>    
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselTelefonia" data-bs-slide="prev">
+        <i class="bi bi-arrow-left-circle-fill" style="color: rgb(14, 118, 168); font-size: xx-large;"></i>
+        <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselTelefonia" data-bs-slide="next">
+        <i class="bi bi-arrow-right-circle-fill" style="color: rgb(14, 118, 168); font-size: xx-large;"></i>
+        <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <!-- FIN DE SECCION TELEFONIA -->
+        <!-- SECCION GAMING -->
+        <div class="container">
+          <h4 class="mx-3"><b>GAMING</b></h4>
+        </div>
+        <div id="carouselGaming" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselGaming" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselGaming" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselGaming" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="p-5 carousel-inner container">
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col-sm-2 m-3 btn card border border-footer rounded-3 shadow-sm border-1 producto ">
+                  <img src="../../../assets/images/asusTuf.png" class="card-img-top img-fluid" alt="...">
+                  <div class="card-body">
+                    <p>Asus Gaming</p>
+                    <a href=""><b>1200 €</b></a>                     
+                  </div>
+                </div>
+                <div class="col-sm-2 m-3 btn card border border-footer rounded-3 shadow-sm border-1 producto ">
+                  <img src="../../../assets/images/asusTuf.png" class="card-img-top img-fluid" alt="...">
+                  <div class="card-body">
+                    <p>Asus Gaming</p>
+                    <a href=""><b>1200 €</b></a>                     
+                  </div>
+                </div>
+                <div class="col-sm-2 m-3 btn card border border-footer rounded-3 shadow-sm border-1 producto ">
+                  <img src="../../../assets/images/asusTuf.png" class="card-img-top img-fluid" alt="...">
+                  <div class="card-body">
+                    <p>Asus Gaming</p>
+                    <a href=""><b>1200 €</b></a>                     
+                  </div>
+                </div>
+                <div class="col-sm-2 m-3 btn card border border-footer rounded-3 shadow-sm border-1 producto ">
+                  <img src="../../../assets/images/asusTuf.png" class="card-img-top img-fluid" alt="...">
+                  <div class="card-body">
+                    <p>Asus Gaming</p>
+                    <a href=""><b>1200 €</b></a>                     
+                  </div>
+                </div>
+                <div class="col-sm-2 m-3 btn card border border-footer rounded-3 shadow-sm border-1 producto ">
+                  <img src="../../../assets/images/asusTuf.png" class="card-img-top img-fluid" alt="...">
+                  <div class="card-body">
+                    <p>Asus Gaming</p>
+                    <a href=""><b>1200 €</b></a>                     
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col-sm-2 m-3 btn card border border-footer rounded-3 shadow-sm border-1 producto ">
+                  <img src="../../../assets/images/asusTuf.png" class="card-img-top img-fluid" alt="...">
+                  <div class="card-body">
+                    <p>Asus Gaming</p>
+                    <a href=""><b>1200 €</b></a>                     
+                  </div>
+                </div>
+                <div class="col-sm-2 m-3 btn card border border-footer rounded-3 shadow-sm border-1 producto ">
+                  <img src="../../../assets/images/asusTuf.png" class="card-img-top img-fluid" alt="...">
+                  <div class="card-body">
+                    <p>Asus Gaming</p>
+                    <a href=""><b>1200 €</b></a>                     
+                  </div>
+                </div>
+                <div class="col-sm-2 m-3 btn card border border-footer rounded-3 shadow-sm border-1 producto ">
+                  <img src="../../../assets/images/asusTuf.png" class="card-img-top img-fluid" alt="...">
+                  <div class="card-body">
+                    <p>Asus Gaming</p>
+                    <a href=""><b>1200 €</b></a>                     
+                  </div>
+                </div>
+                <div class="col-sm-2 m-3 btn card border border-footer rounded-3 shadow-sm border-1 producto ">
+                  <img src="../../../assets/images/asusTuf.png" class="card-img-top img-fluid" alt="...">
+                  <div class="card-body">
+                    <p>Asus Gaming</p>
+                    <a href=""><b>1200 €</b></a>                     
+                  </div>
+                </div>
+                <div class="col-sm-2 m-3 btn card border border-footer rounded-3 shadow-sm border-1 producto ">
+                  <img src="../../../assets/images/asusTuf.png" class="card-img-top img-fluid" alt="...">
+                  <div class="card-body">
+                    <p>Asus Gaming</p>
+                    <a href=""><b>1200 €</b></a>                     
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col-sm-2 m-3 btn card border border-footer rounded-3 shadow-sm border-1 producto ">
+                  <img src="../../../assets/images/asusTuf.png" class="card-img-top img-fluid" alt="...">
+                  <div class="card-body">
+                    <p>Asus Gaming</p>
+                    <a href=""><b>1200 €</b></a>                     
+                  </div>
+                </div>
+                <div class="col-sm-2 m-3 btn card border border-footer rounded-3 shadow-sm border-1 producto ">
+                  <img src="../../../assets/images/asusTuf.png" class="card-img-top img-fluid" alt="...">
+                  <div class="card-body">
+                    <p>Asus Gaming</p>
+                    <a href=""><b>1200 €</b></a>                     
+                  </div>
+                </div>
+                <div class="col-sm-2 m-3 btn card border border-footer rounded-3 shadow-sm border-1 producto ">
+                  <img src="../../../assets/images/asusTuf.png" class="card-img-top img-fluid" alt="...">
+                  <div class="card-body">
+                    <p>Asus Gaming</p>
+                    <a href=""><b>1200 €</b></a>                     
+                  </div>
+                </div>
+                <div class="col-sm-2 m-3 btn card border border-footer rounded-3 shadow-sm border-1 producto ">
+                  <img src="../../../assets/images/asusTuf.png" class="card-img-top img-fluid" alt="...">
+                  <div class="card-body">
+                    <p>Asus Gaming</p>
+                    <a href=""><b>1200 €</b></a>                     
+                  </div>
+                </div>
+                <div class="col-sm-2 m-3 btn card border border-footer rounded-3 shadow-sm border-1 producto ">
+                  <img src="../../../assets/images/asusTuf.png" class="card-img-top img-fluid" alt="...">
+                  <div class="card-body">
+                    <p>Asus Gaming</p>
+                    <a href=""><b>1200 €</b></a>                     
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>     
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselGaming" data-bs-slide="prev">
+            <i class="bi bi-arrow-left-circle-fill" style="color: rgb(14, 118, 168); font-size: xx-large;"></i>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselGaming" data-bs-slide="next">
+            <i class="bi bi-arrow-right-circle-fill" style="color: rgb(14, 118, 168); font-size: xx-large;"></i>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        <!-- FIN SECCION GAMING -->
+</div>

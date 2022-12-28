@@ -1,0 +1,39 @@
+textarea:focus, input:focus, input[type]:focus {
+  border-color: rgb(14, 118, 168);
+  box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(11, 89, 126);
+  outline: 0 none;
+}
+
+u {
+  text-decoration-color: rgb(14, 118, 168);
+}
+
+input {
+  border-color: rgb(14, 118, 168);
+}
+
+button {
+  margin-top: 0.5em;
+}
+
+h4 {
+  margin-bottom: 0.7em;
+}
+
+.input-group-text {
+  background-color: #E5E5E5;
+  border-color: #0E76A8;
+  border-top-left-radius: 0%;
+  border-bottom-left-radius: 0%;
+}
+
+.card {
+  border-color: rgb(14, 118, 168);
+  border-width: 2px;
+  border-radius: 10px;
+  padding: 1em;
+}
+
+.card-text {
+  font-weight: 500;
+}

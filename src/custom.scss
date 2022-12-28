@@ -1,0 +1,17 @@
+$theme-colors: (
+  "primary":    #0E76A8,
+  "secondary":  #0B597E,
+  "success":    #00BD5F,
+  "caution":    #c24e4e,
+  "info":       #E5E5E5,
+  "footer":     #535353
+);
+
+$black: #000;
+
+$box-shadow-sm: 0 .500rem .50rem rgba($black, .075);
+
+$breadcrumb-divider: quote(">");
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css");

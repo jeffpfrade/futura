@@ -1,0 +1,98 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+      <a class="navbar-brand fs-2" href="#"> F U T U R A</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="search mx-auto">
+          <form>
+            <input class="form-control" type="search" placeholder="Buscar en  FUTURA ..." aria-label="Search">
+          </form>
+        </div>
+        <div class="justify-content-end">
+          <ul class="navbar-nav">
+
+            <ng-container *ngIf="userLogged|async as user; else notLogged">
+              <li class="nav-item">
+                <a class="nav-link active fs-5 me-5" routerLink="/my-account" href="#"><i class="bi bi-person me-1"></i>Mi cuenta</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active fs-5" routerLink="/shopping-cart" href="#"><i class="bi bi-cart3 me-1"></i> Mi carrito</a>
+              </li>
+            </ng-container>
+
+            <ng-template #notLogged>
+              <li class="nav-item">
+                <a class="nav-link active fs-5 me-5" routerLink="/sign-in" href="#"><i class="bi bi-person me-1"></i>Iniciar sesión</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active fs-5" routerLink="/sign-in" href="#"><i class="bi bi-cart3 me-1"></i> Mi carrito</a>
+              </li>
+            </ng-template>
+
+            <!-- <ng-container *ngIf="!authService.loggedIn(); else loggedIn">
+              <li class="nav-item">
+                <a class="nav-link active fs-5 me-5" routerLink="/mi-cuenta" href="#"><i class="bi bi-person me-1"></i>Iniciar sesión</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active fs-5" routerLink="/carrito" href="#"><i class="bi bi-cart3 me-1"></i> Mi carrito</a>
+              </li>
+            </ng-container>
+            <ng-template #loggedIn>
+              <li class="nav-item">
+                <a class="nav-link active fs-5 me-5" routerLink="/profile" href="#"><i class="bi bi-person me-1"></i>Mi cuenta</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active fs-5" routerLink="/carrito" href="#"><i class="bi bi-cart3 me-1"></i> Mi carrito</a>
+              </li>
+            </ng-template> -->
+          </ul>
+        </div>
+      </div>
+  </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+  <div class="container">
+      <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <div class="dropdown show">
+                <a class="border border-2 rounded-3 dropdown-toggle nav-link active me-5 subheader" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Categorias
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <a class="dropdown-item" routerLink="/ordenadores">Portátiles</a>
+                  <a class="dropdown-item" routerLink="/moviles">Móviles</a>
+                  <a class="dropdown-item" href="#">Electrodomésticos</a>
+                  <a class="dropdown-item" href="#">Consolas</a>
+                  <a class="dropdown-item" href="#">Videojuegos</a>
+                  <a class="dropdown-item" href="#">Televisores</a>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active me-5 subheader" href="#">Ofertas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active me-5 subheader" href="#">Lo más vendido</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active me-5 subheader" routerLink="/moviles">Smartphones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active me-5 subheader" href="#">Tablets</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active me-5 subheader" routerLink="/ordenadores">Portátiles</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active me-5 subheader" href="#">Gaming</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active me-5 subheader" href="#">Televisión</a>
+            </li>
+          </ul>
+      </div>
+  </div>
+</nav>

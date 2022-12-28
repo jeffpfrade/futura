@@ -1,0 +1,24 @@
+u {
+  text-decoration-color: rgb(14, 118, 168);
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+i.pago{
+  color: black;
+}
+
+a:hover{
+  color: rgb(80, 185, 233);
+}
+
+h4{
+  color: white;
+}
+
+.bi:hover{
+  color: rgb(80, 185, 233);
+}

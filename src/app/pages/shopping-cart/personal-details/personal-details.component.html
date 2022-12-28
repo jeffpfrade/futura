@@ -1,0 +1,92 @@
+<div class="container">
+  <div class="mt-3 row">
+      <div class="col-sm-12">
+          <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+              aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a class="text-decoration-none text-dark" href="#" routerLink="/">Inicio</a></li>
+                  <li class="breadcrumb-item"><a class="text-decoration-none text-dark" href="#" routerLink="/shopping-cart">Carrito</a></li>
+                  <li class="breadcrumb-item active text-dark fw-bold" aria-current="page">Datos Personales</li>
+              </ol>
+          </nav>
+      </div>
+  </div>
+  <h4 class="card-title mt-2 mb-3"><u>TR</u>AMITAR<b> COMPRA</b></h4>
+  <!-- only showing big devices -->
+  <div class="d-none d-sm-block">
+      <div class="row">
+          <nav class="d-flex justify-content-evenly mt-4">
+              <a style="text-decoration:none" href="" routerLink="/shopping-cart/shipping">1. ENVÍO</a>
+              <a style="text-decoration:none"><b style="color: rgb(14, 118, 168);">2. DATOS PERSONALES</b></a>
+              <a style="text-decoration:none" href="" routerLink="/shopping-cart/payment">3. PAGO</a>
+              <a style="text-decoration:none">4. CONFIRMACIÓN</a>
+          </nav>
+              <hr style="border: 1px solid black;">
+      </div>
+  </div>
+  <!-- end showing big devices -->
+
+  <!-- only showing in small devices -->
+  <div class="d-block d-sm-none">
+  <nav class="navbar navbar-expand-xs navbar-dark">
+      <div class="container">
+          <div class="navbar-collapse" id="navbarSupportedContent"> 
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                      <a class="nav-link active me-5 subheader" href="#" style="color: black;" routerLink="/shopping-cart/shipping">1. ENVÍO</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link active me-5 subheader" style="color: black;"><b style="color: rgb(14, 118, 168);">2. DATOS PERSONALES</b></a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link active me-5 subheader" href="#" style="color: black;" routerLink="/shopping-cart/payment">3. PAGO</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link active me-5 subheader" style="color: black;">4. CONFIRMACIÓN</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+  </div>
+  <!-- end block showing small devices -->
+  
+  <div class="row">
+      <div class="col-sm-7">
+          <h5 class="mt-5" style="font-weight: 400;">INFORMACIÓN PERSONAL DEL CLIENTE</h5>
+          <div class="border border-primary border-1 border-rounded rounded-3">
+              <div class="d-flex justify-content-md-between mt-2">
+                  <div class="mx-3">
+                      <p><b>NOMBRE Y APELLIDOS</b></p>
+                      <p>{{this.currentUser.firstName}} {{this.currentUser.secondName}}</p>
+                  </div>
+                  <div>
+                      <button type="button" class="mx-3 btn btn-outline-primary mt-2">MODIFICAR</button>
+                  </div>
+              </div>
+              <div class="mx-3">
+                  <p><b>DIRECCIÓN</b></p>
+                  <p>Calle Carrera escultor estevez, 1 
+                      Código postal 38300 
+                      La Orotava (SANTA CRUZ DE TENERIFE)
+                      ESPAÑA</p>
+              </div>
+              <div class="mx-3">
+                  <p><b>TELÉFONO</b></p>
+                  <p>647419604</p>
+              </div>
+          </div>
+      </div>
+      <div class="col-sm-5">
+          <app-summary></app-summary>
+      </div>
+  </div>
+  <div class="row mt-5">
+      <div class="col-sm-7 d-grid gap-2">
+          <button type="button" class="mb-2 btn btn-outline-primary" routerLink="/shopping-cart/shipping">Volver</button>
+      </div>
+      <div class="col-sm-5 d-grid gap-2">
+          <button type="button" class="mb-2 btn btn-primary btn-lg btn-block shadow-sm" routerLink="/shopping-cart/payment">Continuar<i class="bi bi-chevron-compact-right"></i></button>
+      </div>
+  </div>
+</div>
