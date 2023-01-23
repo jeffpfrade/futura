@@ -4,6 +4,10 @@ textarea:focus, input:focus, input[type]:focus {
   outline: 0 none;
 }
 
+.password-length-info {
+  color: #c24e4e;
+}
+
 h3 {
   margin-bottom: 0.7em;
 }

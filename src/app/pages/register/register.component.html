@@ -67,6 +67,9 @@
                                           </span>
                                       </div>
                                   </div>
+                                <span *ngIf="form.invalid" class="password-length-info">
+                                  La contraseña debe tener un mínimo de 8 caracteres.
+                                </span>
                               </div>
                               <div class="col-sm-5 mb-5">
                                   <label for="password_confirmation" class="form-label">CONFIRMA TU CONTRASEÑA <span class="text-danger fw-bold">*</span></label>
@@ -89,10 +92,10 @@
                           <div class="col-sm-10 offset-sm-1">
                               <input formControlName="conditions" type="checkbox" class="form-check-input" id="conditions" required>
                               <label class="form-check-label" for="conditions">He leído y acepto las Condiciones de uso y la Política de privacidad de FUTURA. <span class="text-danger fw-bold">*</span></label>
-                          </div>          
+                          </div>
                       </div>
                       <div class="d-grid gap-2 col-sm-4 mx-auto">
-                          <button [disabled]="form.invalid" type="submit" class="btn btn-primary shadow" [disabled]="loadingSpinner">
+                          <button [disabled]="form.invalid" type="submit" class="btn btn-primary shadow">
                             <span *ngIf="loadingSpinner" class="spinner-border spinner-border-sm mr-1"></span>
                             CREAR CUENTA</button>
                       </div>
